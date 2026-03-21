@@ -20,6 +20,8 @@ cloudinary.config({
 
 });
 
+console.log("Cloudinary config:", process.env.cloudinary_Config_Cloud_Name, process.env.cloudinary_Config_api_key ? "OK" : "MISSING");
+
 /**
  * MULTER CONFIG (TEMP STORAGE)
  */
