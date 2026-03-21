@@ -5,8 +5,22 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 const authJwt = require('./helper/jwt.js');
+const allowedOrigins = [
+  "https://69bed44603f0c54fcbcc1f60--meek-bonbon-394446.netlify.app",
+  "http://localhost:3000"
+];
 
-app.use(cors());
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); // allow non-browser requests
+    if (allowedOrigins.indexOf(origin) === -1) {
+      return callback(new Error("CORS policy blocked this origin"), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true 
+}));
 
 // Body parser
 app.use(bodyParser.json());
