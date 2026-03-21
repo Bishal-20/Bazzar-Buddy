@@ -6,24 +6,7 @@ const cors = require('cors');
 require('dotenv').config();
 const authJwt = require('./helper/jwt.js');
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:3001" ,"http://localhost:8000" ,"https://69becd89b8d2bc1ec6ccfce9--meek-bonbon-394446.netlify.app"];
-
-// CORS configuration
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      console.warn("Blocked by CORS:", origin);
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-  optionsSuccessStatus: 200
-}));
-
-// Handle preflight OPTIONS requests
-app.options("*", cors());
+app.use(cors());
 
 // Body parser
 app.use(bodyParser.json());
