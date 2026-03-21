@@ -6,7 +6,7 @@ const cors = require('cors');
 require('dotenv').config();
 const authJwt = require('./helper/jwt.js');
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:3001" ,"http://localhost:8000"];
+const allowedOrigins = ["http://localhost:3000", "http://localhost:3001" ,"http://localhost:8000" ,"https://69becd89b8d2bc1ec6ccfce9--meek-bonbon-394446.netlify.app"];
 
 // CORS configuration
 app.use(cors({
@@ -51,15 +51,15 @@ app.use('/api/user', userRoutes);
 
 
 // Protected routes (JWT required)
-app.use('/api/category', authJwt(), categoryRoutes);
-app.use('/api/subCat', authJwt(), subCatRoutes);
-app.use('/api/product', authJwt(), productRoutes);
-app.use('/api/productWeight', authJwt(), productWeightRoutes);
+app.use('/api/category', categoryRoutes);
+app.use('/api/subCat', subCatRoutes);
+app.use('/api/product', productRoutes);
+app.use('/api/productWeight',productWeightRoutes);
 app.use('/api/cart', authJwt(), cartRoutes);
 app.use('/api/productReview', authJwt(), reviewRoutes);
 app.use('/api/wishlist', authJwt(), wishlistRoutes);
 app.use('/api/orders', authJwt(), ordersRoutes);
-app.use('/api/homeBanner', authJwt(), homeBannerRoutes);
+app.use('/api/homeBanner', homeBannerRoutes);
 app.use('/api/dashboard', authJwt(), dashboardRoutes);
 
 // Connect to MongoDB
