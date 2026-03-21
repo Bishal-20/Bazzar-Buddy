@@ -21,7 +21,7 @@
     "react-lazy-load-image-component": "^1.6.3",
     "react-range-slider-input": "^3.0.7",
     "react-router-dom": "^6.30.3",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-slick": "^0.30.3",
     "react-top-loading-bar": "^3.0.2",
     "slick-carousel": "^1.8.1",
