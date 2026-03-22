@@ -25,7 +25,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://fullstack-ecommerce-server-0gij.onrender.com",
 });
 
 axiosInstance.interceptors.request.use(

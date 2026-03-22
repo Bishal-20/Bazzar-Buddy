@@ -39,7 +39,7 @@ function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isOpenNav, setIsOpenNav] = useState(false);
   const [themeMode, setThemeMode] = useState(true);
-  const [baseUrl, setBaseUrl] = useState("http://localhost:4000");
+  const [baseUrl, setBaseUrl] = useState("https://fullstack-ecommerce-server-0gij.onrender.com");
   const [progress, setProgress] = useState(0);
   const [user, setUser] = useState(() => {
     const stored = localStorage.getItem("user");
