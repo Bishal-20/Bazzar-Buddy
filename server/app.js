@@ -6,7 +6,7 @@ const cors = require('cors');
 require('dotenv').config();
 const authJwt = require('./helper/jwt.js');
 const allowedOrigins = [
-  "https://69bed44603f0c54fcbcc1f60--meek-bonbon-394446.netlify.app",
+  "https://bazzar-buddy.onrender.com",
   "http://localhost:3000"
 ];
 
