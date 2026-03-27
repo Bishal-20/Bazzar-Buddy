@@ -59,13 +59,16 @@ app.use('/api/productReview', authJwt(), reviewRoutes);
 app.use('/api/wishlist', authJwt(), wishlistRoutes);
 app.use('/api/orders', authJwt(), ordersRoutes);
 app.use('/api/homeBanner', homeBannerRoutes);
-app.use('/api/dashboard', authJwt(), dashboardRoutes;
+app.use('/api/dashboard', authJwt(), dashboardRoutes);
 
 const buildPath = path.join(__dirname, "../client/build");
 
 app.use(express.static(buildPath));
 
-app.get("*", (req, res) => {
+app.get("*", (req, res, next) => {
+  if (req.originalUrl.startsWith("/api")) {
+    return next();
+  }
   res.sendFile(path.join(buildPath, "index.html"));
 });
 
