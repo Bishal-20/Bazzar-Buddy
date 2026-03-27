@@ -7,7 +7,7 @@ const cors = require('cors');
 require('dotenv').config();
 const authJwt = require('./helper/jwt.js');
 const allowedOrigins = [
-  "https://bazzar-buddy.onrender.com",
+  "https://bazzar-buddy-client.onrender.com",
   "https://bazzar-buddy-admin.onrender.com",
   "http://localhost:3000"
 ];
