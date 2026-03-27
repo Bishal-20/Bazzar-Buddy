@@ -395,7 +395,7 @@ nav .navPart2 {
 
 nav .allCatTab {
   background: #136936;
-  padding: 10px 15px !important;
+  padding: 5px 15px !important;
   border-radius: 30px !important;
 }
 nav .allCatTab * {
@@ -405,6 +405,7 @@ nav .allCatTab:hover {
   background: #fbcf1f;
 }
 nav .allCatTab .text {
+  font-size: 12px;
   font-weight: 600;
 }
 
