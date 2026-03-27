@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require("path");
 const cors = require('cors');
 require('dotenv').config();
 const authJwt = require('./helper/jwt.js');
@@ -58,7 +59,15 @@ app.use('/api/productReview', authJwt(), reviewRoutes);
 app.use('/api/wishlist', authJwt(), wishlistRoutes);
 app.use('/api/orders', authJwt(), ordersRoutes);
 app.use('/api/homeBanner', homeBannerRoutes);
-app.use('/api/dashboard', authJwt(), dashboardRoutes);
+app.use('/api/dashboard', authJwt(), dashboardRoutes;
+
+const buildPath = path.join(__dirname, "client/build");
+
+app.use(express.static(buildPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(buildPath, "index.html"));
+});
 
 // Connect to MongoDB
 mongoose.connect(process.env.CONNECTION_STRING, {
