@@ -61,7 +61,7 @@ app.use('/api/orders', authJwt(), ordersRoutes);
 app.use('/api/homeBanner', homeBannerRoutes);
 app.use('/api/dashboard', authJwt(), dashboardRoutes;
 
-const buildPath = path.join(__dirname, "client/build");
+const buildPath = path.join(__dirname, "../client/build");
 
 app.use(express.static(buildPath));
 
