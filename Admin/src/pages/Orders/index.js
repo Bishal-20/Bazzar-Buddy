@@ -21,7 +21,7 @@ const Orders = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    fetchDataFromApi("/api/orders?page=1&perPage=8").then((res) => {
+    fetchDataFromApi("/api/orders/admin/all-orders").then((res) => {
       setOrders(res);
     });
   }, []);
@@ -49,7 +49,7 @@ const Orders = () => {
       };
       console.log(order);
       editData(`/api/orders/${id}`, order).then((res) => {
-        fetchDataFromApi("/api/orders?page=1&perPage=8").then((res) => {
+        fetchDataFromApi("/api/orders/admin/all-orders").then((res) => {
           setOrders(res);
         });
       });
